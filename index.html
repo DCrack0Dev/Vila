@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vilai Lai Spa | Luxury Day Spa Nelspruit</title>
+    <style>
+        /* --- DESIGN SYSTEM & RESET --- */
+        :root {
+            --deep-bg: #1E1510;
+            --mid-brown: #2A1F14;
+            --card-surface: #F0EAE1;
+            --page-bg: #F7F3EE;
+            --gold-accent: #B8966A;
+            --light-text: #F0E6D8;
+            --muted-text: #7A6A58;
+            --subtle-text: #5A4A3A;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, serif;
+            background-color: var(--page-bg);
+            color: var(--subtle-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 500;
+            letter-spacing: -0.02em;
+        }
+
+        .caps {
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 0.5px solid rgba(184,150,106,0.2);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        button, .btn {
+            cursor: pointer;
+            border: none;
+            font-family: Georgia, serif;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50px;
+        }
+
+        .btn-gold {
+            background-color: var(--gold-accent);
+            color: var(--deep-bg);
+            padding: 12px 32px;
+            font-weight: 500;
+        }
+
+        .btn-gold:hover {
+            background-color: #a3855e;
+            transform: translateY(-2px);
+        }
+
+        .btn-ghost {
+            background-color: transparent;
+            border: 1px solid var(--gold-accent);
+            color: var(--gold-accent);
+            padding: 12px 32px;
+        }
+
+        .btn-ghost:hover {
+            background-color: rgba(184, 150, 106, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: var(--page-bg);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+        }
+
+        .logo-mark {
+            width: 12px;
+            height: 12px;
+            background-color: var(--gold-accent);
+            border-radius: 50%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-accent);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            min-height: 90vh;
+            background-color: var(--deep-bg);
+        }
+
+        .hero-content {
+            padding: 10% 12% 10% 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: var(--light-text);
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+        }
+
+        .hero-content p {
+            color: var(--muted-text);
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .meta-tag {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .meta-tag span:first-child {
+            color: var(--gold-accent);
+        }
+
+        .hero-visual {
+            position: relative;
+            background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr auto;
+            padding: 40px;
+            gap: 20px;
+        }
+
+        .hero-visual::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, var(--deep-bg) 0%, rgba(30,21,16,0.2) 100%);
+        }
+
+        .hero-sub-grid {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            z-index: 1;
+        }
+
+        .hero-sub-grid img {
+            height: 200px;
+        }
+
+        /* --- TRUST BAR --- */
+        .trust-bar {
+            background-color: var(--gold-accent);
+            padding: 3rem 5%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+            color: var(--deep-bg);
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            margin-bottom: 0.2rem;
+        }
+
+        /* --- PHILOSOPHY --- */
+        .philosophy {
+            padding: 8rem 10%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8rem;
+            align-items: center;
+        }
+
+        .philosophy-left blockquote {
+            font-size: 2.2rem;
+            line-height: 1.3;
+            margin-bottom: 2.5rem;
+            color: var(--deep-bg);
+        }
+
+        .philosophy-right {
+            display: grid;
+            gap: 3rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .feature-num {
+            color: var(--gold-accent);
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding-top: 5px;
+        }
+
+        .feature-text h4 {
+            margin-bottom: 0.5rem;
+            color: var(--deep-bg);
+        }
+
+        /* --- SERVICES --- */
+        .services {
+            padding: 8rem 5%;
+            background-color: white;
+            text-align: center;
+        }
+
+        .section-eyebrow {
+            color: var(--gold-accent);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 4rem;
+            color: var(--deep-bg);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            text-align: left;
+        }
+
+        .service-card {
+            background-color: var(--card-surface);
+            padding: 3rem 2.5rem;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            border: 0.5px solid rgba(184,150,106,0.1);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .service-card.featured {
+            background-color: var(--deep-bg);
+            color: var(--light-text);
+        }
+
+        .service-card.featured .service-name { color: var(--light-text); }
+        .service-card.featured .service-desc { color: var(--muted-text); }
+
+        .service-accent {
+            width: 40px;
+            height: 1px;
+            background-color: var(--gold-accent);
+            margin-bottom: 2rem;
+        }
+
+        .service-name {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--deep-bg);
+        }
+
+        .service-desc {
+            font-size: 0.95rem;
+            color: var(--subtle-text);
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .service-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .price {
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .btn-sm {
+            padding: 8px 24px;
+            font-size: 0.8rem;
+        }
+
+        /* --- REVIEWS --- */
+        .reviews {
+            background-color: var(--deep-bg);
+            padding: 8rem 5%;
+            color: var(--light-text);
+            text-align: center;
+        }
+
+        .reviews h2 {
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .review-card {
+            background-color: var(--mid-brown);
+            padding: 3rem 2.5rem;
+            text-align: left;
+        }
+
+        .stars {
+            color: var(--gold-accent);
+            margin-bottom: 1.5rem;
+            letter-spacing: 4px;
+        }
+
+        .review-text {
+            font-style: italic;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .reviewer {
+            font-size: 0.8rem;
+            color: var(--muted-text);
+        }
+
+        /* --- FINAL CTA --- */
+        .final-cta {
+            padding: 10rem 5%;
+            text-align: center;
+            background-color: var(--card-surface);
+        }
+
+        .diamond-divider {
+            width: 12px;
+            height: 12px;
+            background-color: var(--gold-accent);
+            transform: rotate(45deg);
+            margin: 0 auto 3rem;
+        }
+
+        .final-cta h2 {
+            font-size: 3.5rem;
+            margin-bottom: 3rem;
+            color: var(--deep-bg);
+        }
+
+        /* --- MOBILE NAV & STICKY BAR --- */
+        .mobile-bottom-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--page-bg);
+            grid-template-columns: 1fr 1fr 1.5fr;
+            z-index: 2000;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .mobile-action {
+            padding: 18px;
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        .mobile-action.book {
+            background-color: var(--deep-bg);
+            color: var(--light-text);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 1px;
+            background-color: var(--deep-bg);
+        }
+
+        /* --- RESPONSIVENESS --- */
+        @media (max-width: 1024px) {
+            .hero { grid-template-columns: 1fr; }
+            .hero-visual { height: 400px; order: -1; }
+            .philosophy { grid-template-columns: 1fr; gap: 4rem; }
+            .services-grid, .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem 5%; }
+            .nav-links, nav .btn-gold { display: none; }
+            .menu-toggle { display: flex; }
+            
+            .hero-content h1 { font-size: 2.5rem; }
+            .trust-bar { grid-template-columns: 1fr 1fr; gap: 2rem; }
+            .stat-item h3 { font-size: 2rem; }
+            
+            .services-grid, .reviews-grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 2.2rem; }
+            .final-cta h2 { font-size: 2.2rem; }
+
+            .mobile-bottom-bar { display: grid; }
+            body { padding-bottom: 60px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">
+            <div class="logo-mark"></div>
+            VILAI LAI SPA
+        </div>
+        <div class="nav-links caps">
+            <a href="#services">Services</a>
+            <a href="#about">Philosophy</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <a href="#book" class="btn btn-gold caps">Book Now</a>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="italic">Where every visit becomes a <span class="italic">ritual</span> of renewal.</h1>
+            <p>Experience the pinnacle of wellness in Nelspruit. Our therapists combine ancient wisdom with modern techniques to restore your inner balance.</p>
+            <div class="hero-actions">
+                <button class="btn btn-gold caps">View Menu</button>
+                <button class="btn btn-ghost caps">Our Story</button>
+            </div>
+            <div class="hero-meta caps">
+                <div class="meta-tag">
+                    <span>Opening Hours</span>
+                    <span>Mon - Sun 08:00 - 18:00</span>
+                </div>
+                <div class="meta-tag">
+                    <span>Location</span>
+                    <span>Mbombela, South Africa</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-sub-grid">
+                <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&q=80" alt="Signature Suite" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=600&q=80" alt="Treatment Room" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+        <div class="stat-item">
+            <h3>1,200+</h3>
+            <div class="caps">Happy Clients</div>
+        </div>
+        <div class="stat-item">
+            <h3>4.9</h3>
+            <div class="caps">Average Stars</div>
+        </div>
+        <div class="stat-item">
+            <h3>8</h3>
+            <div class="caps">Years Experience</div>
+        </div>
+        <div class="stat-item">
+            <h3>12+</h3>
+            <div class="caps">Signature Treatments</div>
+        </div>
+    </div>
+
+    <!-- PHILOSOPHY -->
+    <section class="philosophy" id="about">
+        <div class="philosophy-left">
+            <blockquote class="italic">"True beauty is the harmony of body, mind, and spirit. We don't just provide treatments; we curate experiences."</blockquote>
+            <p>Nestled in the heart of Nelspruit, Vilai Lai Spa offers an escape from the frantic pace of modern life. Our philosophy is rooted in the belief that self-care is not a luxury, but a vital necessity for modern living.</p>
+            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="Therapist Hands" style="margin-top: 3rem; height: 300px;" loading="lazy">
+        </div>
+        <div class="philosophy-right">
+            <div class="feature-item">
+                <div class="feature-num">01</div>
+                <div class="feature-text">
+                    <h4 class="caps">Holistic Approach</h4>
+                    <p>We treat the whole person, ensuring that every session addresses both physical tension and mental fatigue.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-num">02</div>
+                <div class="feature-text">
+                    <h4 class="caps">Premium Botanicals</h4>
+                    <p>Using only the finest organic oils and luxury skincare brands to ensure lasting results and safety.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-num">03</div>
+                <div class="feature-text">
+                    <h4 class="caps">Expert Therapists</h4>
+                    <p>Our team undergoes continuous training in both traditional and cutting-edge therapeutic modalities.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-num">04</div>
+                <div class="feature-text">
+                    <h4 class="caps">Serene Sanctuary</h4>
+                    <p>Every corner of our spa is designed to evoke a sense of calm, from ambient soundscapes to custom scents.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="section-eyebrow caps">Our Curated Menu</div>
+        <h2 class="section-title italic">Elevated Rituals</h2>
+        
+        <div class="services-grid">
+            <!-- Card 1 (Featured) -->
+            <div class="service-card featured">
+                <div class="service-accent"></div>
+                <h3 class="service-name italic">Vilai Signature Facial</h3>
+                <p class="service-desc">Our most requested treatment. A multi-sensory journey including deep cleansing, lymphatic drainage, and a custom botanical mask.</p>
+                <div class="service-footer">
+                    <span class="price">R 850</span>
+                    <button class="btn btn-gold btn-sm caps">Book</button>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="service-card">
+                <div class="service-accent"></div>
+                <h3 class="service-name italic">Deep Tissue Release</h3>
+                <p class="service-desc">Targeted pressure to release chronic muscle tension and improve mobility. Ideal for active lifestyles.</p>
+                <div class="service-footer">
+                    <span class="price">R 650</span>
+                    <button class="btn btn-gold btn-sm caps">Book</button>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="service-card">
+                <div class="service-accent"></div>
+                <h3 class="service-name italic">Aromatherapy Ritual</h3>
+                <p class="service-desc">A gentle massage using hand-blended essential oils to calm the nervous system and restore tranquility.</p>
+                <div class="service-footer">
+                    <span class="price">R 550</span>
+                    <button class="btn btn-gold btn-sm caps">Book</button>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="service-card">
+                <div class="service-accent"></div>
+                <h3 class="service-name italic">Hot Stone Therapy</h3>
+                <p class="service-desc">Volcanic stones heated to perfection to melt away stress and improve circulation throughout the body.</p>
+                <div class="service-footer">
+                    <span class="price">R 750</span>
+                    <button class="btn btn-gold btn-sm caps">Book</button>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="service-card">
+                <div class="service-accent"></div>
+                <h3 class="service-name italic">Body Glow Scrub</h3>
+                <p class="service-desc">Exfoliation using Himalayan pink salts followed by a hydrating shea butter application for velvet-soft skin.</p>
+                <div class="service-footer">
+                    <span class="price">R 450</span>
+                    <button class="btn btn-gold btn-sm caps">Book</button>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="service-card">
+                <div class="service-accent"></div>
+                <h3 class="service-name italic">Reflexology Path</h3>
+                <p class="service-desc">Pressure point stimulation on the feet to balance energy flow and support internal organ health.</p>
+                <div class="service-footer">
+                    <span class="price">R 400</span>
+                    <button class="btn btn-gold btn-sm caps">Book</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews" id="reviews">
+        <h2 class="italic">Whispers of Serenity</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"The Vilai Signature Facial is hands down the best I've ever had. My skin felt incredible for weeks."</p>
+                <div class="reviewer caps">Sarah J. — Nelspruit</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"An absolute gem in Mbombela. The attention to detail and the atmosphere are world-class."</p>
+                <div class="reviewer caps">Michael D. — White River</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"The therapists are so professional and the space is just breathtaking. Highly recommend."</p>
+                <div class="reviewer caps">Lerato M. — Nelspruit</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+        <div class="diamond-divider"></div>
+        <h2 class="italic">Begin Your Journey</h2>
+        <div class="hero-actions" style="justify-content: center;">
+            <button class="btn btn-gold caps">Book Appointment</button>
+            <button class="btn btn-ghost caps">Contact Us</button>
+        </div>
+    </section>
+
+    <!-- MOBILE STICKY BAR -->
+    <div class="mobile-bottom-bar">
+        <a href="tel:+27123456789" class="mobile-action caps">Call</a>
+        <a href="https://wa.me/27123456789" class="mobile-action caps">WhatsApp</a>
+        <a href="#book" class="mobile-action book caps">Book Now</a>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple Fade-in effect on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .review-card, .feature-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
