@@ -3,8 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vilai Lai Spa | Luxury Day Spa Nelspruit</title>
+    <title>Guest Experiences | Vilai Lai Spa</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .reviews-hero {
+            background-color: var(--deep-bg);
+            color: var(--light-text);
+            padding: 12rem 5% 8rem;
+            text-align: center;
+        }
+        .reviews-wall {
+            padding: 8rem 5%;
+            background-color: var(--page-bg);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+        @media (max-width: 1024px) {
+            .reviews-wall { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .reviews-wall { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
 
@@ -19,7 +40,7 @@
         <div class="nav-links caps">
             <a href="services.html">Services</a>
             <a href="philosophy.html">Philosophy</a>
-            <a href="reviews.html">Reviews</a>
+            <a href="reviews.html" class="active">Reviews</a>
             <a href="contact.html">Contact</a>
         </div>
         <button class="btn btn-gold caps open-booking">Book Now</button>
@@ -29,70 +50,57 @@
         </div>
     </nav>
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="italic">Where every visit becomes a <span class="italic">ritual</span> of renewal.</h1>
-            <p>Experience the pinnacle of wellness in Nelspruit. Our therapists combine ancient wisdom with modern techniques to restore your inner balance.</p>
-            <div class="hero-actions">
-                <a href="services.html" class="btn btn-gold caps">View Menu</a>
-                <a href="philosophy.html" class="btn btn-ghost caps">Our Story</a>
-            </div>
-            <div class="hero-meta caps">
-                <div class="meta-tag">
-                    <span>Opening Hours</span>
-                    <span>Mon - Sun 08:00 - 18:00</span>
-                </div>
-                <div class="meta-tag">
-                    <span>Location</span>
-                    <span>Mbombela, South Africa</span>
-                </div>
-            </div>
-        </div>
-        <div class="hero-visual">
-            <div class="hero-sub-grid">
-                <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&q=80" alt="Signature Suite" loading="lazy">
-                <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=600&q=80" alt="Treatment Room" loading="lazy">
-            </div>
-        </div>
+    <!-- REVIEWS HERO -->
+    <section class="reviews-hero">
+        <div class="section-eyebrow caps">Guest Stories</div>
+        <h2 class="section-title italic" style="color: var(--light-text); margin-bottom: 2rem;">Whispers of Serenity</h2>
+        <p style="max-width: 600px; margin: 0 auto; color: var(--muted-text);">Real experiences from our community in Nelspruit. We pride ourselves on the peace we provide to every guest.</p>
     </section>
 
-    <!-- TRUST BAR -->
-    <div class="trust-bar">
-        <div class="stat-item">
-            <h3>1,200+</h3>
-            <div class="caps">Happy Clients</div>
+    <!-- REVIEWS WALL -->
+    <section class="reviews-wall">
+        <!-- Review 1 -->
+        <div class="review-card" style="background-color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"The Vilai Signature Facial is hands down the best I've ever had. My skin felt incredible for weeks. The atmosphere is just pure luxury."</p>
+            <div class="reviewer caps">Sarah J. — Nelspruit</div>
         </div>
-        <div class="stat-item">
-            <h3>4.9</h3>
-            <div class="caps">Average Stars</div>
+        <!-- Review 2 -->
+        <div class="review-card" style="background-color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"An absolute gem in Mbombela. The attention to detail and the atmosphere are world-class. I've been a regular for 2 years now."</p>
+            <div class="reviewer caps">Michael D. — White River</div>
         </div>
-        <div class="stat-item">
-            <h3>8</h3>
-            <div class="caps">Years Experience</div>
+        <!-- Review 3 -->
+        <div class="review-card" style="background-color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"The therapists are so professional and the space is just breathtaking. It's the only place I go to truly disconnect."</p>
+            <div class="reviewer caps">Lerato M. — Nelspruit</div>
         </div>
-        <div class="stat-item">
-            <h3>12+</h3>
-            <div class="caps">Signature Treatments</div>
+        <!-- Review 4 -->
+        <div class="review-card" style="background-color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"The Hot Stone Therapy was life-changing. I walked in with so much tension and left feeling like a new person."</p>
+            <div class="reviewer caps">Amanda K. — Nelspruit</div>
         </div>
-    </div>
-
-    <!-- PHILOSOPHY PREVIEW -->
-    <section class="philosophy">
-        <div class="philosophy-left">
-            <blockquote class="italic">"True beauty is the harmony of body, mind, and spirit."</blockquote>
-            <p>Nestled in the heart of Nelspruit, Vilai Lai Spa offers an escape from the frantic pace of modern life.</p>
-            <a href="philosophy.html" class="btn btn-ghost caps" style="margin-top: 2rem;">Read Our Philosophy</a>
+        <!-- Review 5 -->
+        <div class="review-card" style="background-color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"Luxury at its finest. From the moment you walk in, the custom scents and soft music transport you elsewhere."</p>
+            <div class="reviewer caps">David S. — Mbombela</div>
         </div>
-        <div class="philosophy-right">
-            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="Therapist Hands" loading="lazy">
+        <!-- Review 6 -->
+        <div class="review-card" style="background-color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"The Reflexology path was so informative and relaxing. You can tell the therapists really know their craft."</p>
+            <div class="reviewer caps">Thabo N. — Nelspruit</div>
         </div>
     </section>
 
     <!-- FINAL CTA -->
     <section class="final-cta">
         <div class="diamond-divider"></div>
-        <h2 class="italic">Begin Your Journey</h2>
+        <h2 class="italic">Ready for Your Ritual?</h2>
         <div class="hero-actions" style="justify-content: center;">
             <button class="btn btn-gold caps open-booking">Book Appointment</button>
             <a href="contact.html" class="btn btn-ghost caps">Contact Us</a>

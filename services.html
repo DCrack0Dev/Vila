@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Vilai Lai Spa</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">
+            <a href="index.html" style="display: flex; align-items: center; gap: 12px;">
+                <div class="logo-mark"></div>
+                VILAI LAI SPA
+            </a>
+        </div>
+        <div class="nav-links caps">
+            <a href="services.html" class="active">Services</a>
+            <a href="philosophy.html">Philosophy</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <button class="btn btn-gold caps open-booking">Book Now</button>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- SERVICES HEADER -->
+    <section class="services" style="background-color: var(--deep-bg); color: var(--light-text); padding-top: 12rem;">
+        <div class="section-eyebrow caps">Our Curated Menu</div>
+        <h2 class="section-title italic" style="color: var(--light-text);">Elevated Rituals</h2>
+        <p style="max-width: 600px; margin: 0 auto 4rem; color: var(--muted-text);">Explore our range of signature treatments designed to restore harmony and vitality to your body and soul.</p>
+    </section>
+
+    <!-- SERVICES GRID -->
+    <section class="services">
+        <div class="services-grid">
+            <div class="service-card featured">
+                <div class="service-accent"></div>
+                <h3 class="service-name italic">Vilai Signature Facial</h3>
+                <p class="service-desc">Our most requested treatment. A multi-sensory journey including deep cleansing, lymphatic drainage, and a custom botanical mask.</p>
+                <div class="service-footer">
+                    <span class="price">R 850</span>
+                    <button class="btn btn-gold btn-sm caps open-booking">Book</button>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-accent"></div>
+                <h3 class="service-name italic">Deep Tissue Release</h3>
+                <p class="service-desc">Targeted pressure to release chronic muscle tension and improve mobility. Ideal for active lifestyles.</p>
+                <div class="service-footer">
+                    <span class="price">R 650</span>
+                    <button class="btn btn-gold btn-sm caps open-booking">Book</button>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-accent"></div>
+                <h3 class="service-name italic">Aromatherapy Ritual</h3>
+                <p class="service-desc">A gentle massage using hand-blended essential oils to calm the nervous system and restore tranquility.</p>
+                <div class="service-footer">
+                    <span class="price">R 550</span>
+                    <button class="btn btn-gold btn-sm caps open-booking">Book</button>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-accent"></div>
+                <h3 class="service-name italic">Hot Stone Therapy</h3>
+                <p class="service-desc">Volcanic stones heated to perfection to melt away stress and improve circulation throughout the body.</p>
+                <div class="service-footer">
+                    <span class="price">R 750</span>
+                    <button class="btn btn-gold btn-sm caps open-booking">Book</button>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-accent"></div>
+                <h3 class="service-name italic">Body Glow Scrub</h3>
+                <p class="service-desc">Exfoliation using Himalayan pink salts followed by a hydrating shea butter application for velvet-soft skin.</p>
+                <div class="service-footer">
+                    <span class="price">R 450</span>
+                    <button class="btn btn-gold btn-sm caps open-booking">Book</button>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-accent"></div>
+                <h3 class="service-name italic">Reflexology Path</h3>
+                <p class="service-desc">Pressure point stimulation on the feet to balance energy flow and support internal organ health.</p>
+                <div class="service-footer">
+                    <span class="price">R 400</span>
+                    <button class="btn btn-gold btn-sm caps open-booking">Book</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MOBILE STICKY BAR -->
+    <div class="mobile-bottom-bar">
+        <a href="tel:+27123456789" class="mobile-action caps">Call</a>
+        <a href="https://wa.me/27123456789" class="mobile-action caps">WhatsApp</a>
+        <button class="mobile-action book caps open-booking">Book Now</button>
+    </div>
+
+    <!-- BOOKING OVERLAY -->
+    <div class="booking-overlay" id="bookingOverlay">
+        <div class="booking-container">
+            <span class="close-booking" id="closeBooking">&times;</span>
+            <div class="booking-header">
+                <div class="diamond-divider"></div>
+                <h2 class="italic">Reserve Your Session</h2>
+                <p class="caps">Personalized Wellness Awaits</p>
+            </div>
+            <form class="booking-form" action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="treatment">Preferred Treatment</label>
+                    <select id="treatment" name="treatment" required>
+                        <option value="" disabled selected>Select a treatment</option>
+                        <option value="Vilai Signature Facial">Vilai Signature Facial</option>
+                        <option value="Deep Tissue Release">Deep Tissue Release</option>
+                        <option value="Aromatherapy Ritual">Aromatherapy Ritual</option>
+                        <option value="Hot Stone Therapy">Hot Stone Therapy</option>
+                        <option value="Body Glow Scrub">Body Glow Scrub</option>
+                        <option value="Reflexology Path">Reflexology Path</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Preferred Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Special Requests</label>
+                    <textarea id="message" name="message" rows="3" placeholder="Any preferences or health considerations?"></textarea>
+                </div>
+                <button type="submit" class="btn btn-gold caps" style="margin-top: 2rem;">Confirm Booking Request</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

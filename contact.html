@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Vilai Lai Spa</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .contact-hero {
+            background-color: var(--deep-bg);
+            color: var(--light-text);
+            padding: 12rem 5% 8rem;
+            text-align: center;
+        }
+        .contact-grid {
+            padding: 8rem 10%;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 6rem;
+            background-color: white;
+        }
+        .contact-info {
+            display: grid;
+            gap: 3rem;
+        }
+        .info-block h4 {
+            margin-bottom: 1rem;
+            color: var(--deep-bg);
+        }
+        .info-block p, .info-block a {
+            color: var(--subtle-text);
+            font-size: 1.1rem;
+        }
+        .map-placeholder {
+            width: 100%;
+            height: 400px;
+            background-color: var(--card-surface);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 4rem;
+            border: 0.5px solid rgba(184,150,106,0.2);
+            color: var(--muted-text);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.8rem;
+        }
+        @media (max-width: 1024px) {
+            .contact-grid { grid-template-columns: 1fr; gap: 4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">
+            <a href="index.html" style="display: flex; align-items: center; gap: 12px;">
+                <div class="logo-mark"></div>
+                VILAI LAI SPA
+            </a>
+        </div>
+        <div class="nav-links caps">
+            <a href="services.html">Services</a>
+            <a href="philosophy.html">Philosophy</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="contact.html" class="active">Contact</a>
+        </div>
+        <button class="btn btn-gold caps open-booking">Book Now</button>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- CONTACT HERO -->
+    <section class="contact-hero">
+        <div class="section-eyebrow caps">Get in Touch</div>
+        <h2 class="section-title italic" style="color: var(--light-text); margin-bottom: 2rem;">Reach Out to Us</h2>
+        <p style="max-width: 600px; margin: 0 auto; color: var(--muted-text);">Have a question or want to customize your visit? Our concierge team is here to assist you.</p>
+    </section>
+
+    <!-- CONTACT CONTENT -->
+    <section class="contact-grid">
+        <div class="contact-info">
+            <div class="info-block">
+                <h4 class="caps">Our Sanctuary</h4>
+                <p>123 Luxury Lane, Riverside Park<br>Mbombela, 1201<br>South Africa</p>
+            </div>
+            <div class="info-block">
+                <h4 class="caps">Reservations</h4>
+                <p><a href="tel:+27123456789">+27 12 345 6789</a></p>
+                <p><a href="mailto:hello@vilailaispa.co.za">hello@vilailaispa.co.za</a></p>
+            </div>
+            <div class="info-block">
+                <h4 class="caps">Opening Hours</h4>
+                <p>Monday – Sunday<br>08:00 – 18:00</p>
+            </div>
+            <div class="info-block">
+                <h4 class="caps">Social</h4>
+                <div style="display: flex; gap: 1.5rem; margin-top: 1rem;">
+                    <a href="#" class="caps" style="font-size: 0.75rem;">Instagram</a>
+                    <a href="#" class="caps" style="font-size: 0.75rem;">Facebook</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form-container">
+            <h3 class="italic" style="font-size: 2.5rem; margin-bottom: 3rem; color: var(--deep-bg);">Send a Message</h3>
+            <form class="booking-form" action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Full Name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="Email Address">
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="What can we help with?">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Tell us how we can help..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-gold caps" style="margin-top: 2rem; width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- MAP SECTION -->
+    <section style="padding: 0 10% 8rem; background-color: white;">
+        <div class="map-placeholder">
+            [ Interactive Map Integration ]
+        </div>
+    </section>
+
+    <!-- MOBILE STICKY BAR -->
+    <div class="mobile-bottom-bar">
+        <a href="tel:+27123456789" class="mobile-action caps">Call</a>
+        <a href="https://wa.me/27123456789" class="mobile-action caps">WhatsApp</a>
+        <button class="mobile-action book caps open-booking">Book Now</button>
+    </div>
+
+    <!-- BOOKING OVERLAY -->
+    <div class="booking-overlay" id="bookingOverlay">
+        <div class="booking-container">
+            <span class="close-booking" id="closeBooking">&times;</span>
+            <div class="booking-header">
+                <div class="diamond-divider"></div>
+                <h2 class="italic">Reserve Your Session</h2>
+                <p class="caps">Personalized Wellness Awaits</p>
+            </div>
+            <form class="booking-form" action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="treatment">Preferred Treatment</label>
+                    <select id="treatment" name="treatment" required>
+                        <option value="" disabled selected>Select a treatment</option>
+                        <option value="Vilai Signature Facial">Vilai Signature Facial</option>
+                        <option value="Deep Tissue Release">Deep Tissue Release</option>
+                        <option value="Aromatherapy Ritual">Aromatherapy Ritual</option>
+                        <option value="Hot Stone Therapy">Hot Stone Therapy</option>
+                        <option value="Body Glow Scrub">Body Glow Scrub</option>
+                        <option value="Reflexology Path">Reflexology Path</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Preferred Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Special Requests</label>
+                    <textarea id="message" name="message" rows="3" placeholder="Any preferences or health considerations?"></textarea>
+                </div>
+                <button type="submit" class="btn btn-gold caps" style="margin-top: 2rem;">Confirm Booking Request</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

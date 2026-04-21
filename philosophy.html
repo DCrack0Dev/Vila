@@ -3,8 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vilai Lai Spa | Luxury Day Spa Nelspruit</title>
+    <title>Our Philosophy | Vilai Lai Spa</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .philosophy-hero {
+            background-color: var(--deep-bg);
+            color: var(--light-text);
+            padding: 12rem 10% 8rem;
+            text-align: center;
+        }
+        .story-section {
+            padding: 8rem 10%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+        .story-image {
+            height: 600px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        @media (max-width: 768px) {
+            .story-section { grid-template-columns: 1fr; gap: 4rem; }
+            .story-image { height: 400px; }
+        }
+    </style>
 </head>
 <body>
 
@@ -18,7 +42,7 @@
         </div>
         <div class="nav-links caps">
             <a href="services.html">Services</a>
-            <a href="philosophy.html">Philosophy</a>
+            <a href="philosophy.html" class="active">Philosophy</a>
             <a href="reviews.html">Reviews</a>
             <a href="contact.html">Contact</a>
         </div>
@@ -29,73 +53,54 @@
         </div>
     </nav>
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="italic">Where every visit becomes a <span class="italic">ritual</span> of renewal.</h1>
-            <p>Experience the pinnacle of wellness in Nelspruit. Our therapists combine ancient wisdom with modern techniques to restore your inner balance.</p>
-            <div class="hero-actions">
-                <a href="services.html" class="btn btn-gold caps">View Menu</a>
-                <a href="philosophy.html" class="btn btn-ghost caps">Our Story</a>
-            </div>
-            <div class="hero-meta caps">
-                <div class="meta-tag">
-                    <span>Opening Hours</span>
-                    <span>Mon - Sun 08:00 - 18:00</span>
-                </div>
-                <div class="meta-tag">
-                    <span>Location</span>
-                    <span>Mbombela, South Africa</span>
-                </div>
-            </div>
+    <!-- PHILOSOPHY HERO -->
+    <section class="philosophy-hero">
+        <div class="section-eyebrow caps">Our Story</div>
+        <h2 class="section-title italic" style="color: var(--light-text); margin-bottom: 2rem;">A Ritual of Renewal</h2>
+        <p style="max-width: 700px; margin: 0 auto; color: var(--muted-text); font-size: 1.2rem;">Founded on the principles of holistic healing and timeless luxury, Vilai Lai Spa is more than a destination—it's a sanctuary for the soul.</p>
+    </section>
+
+    <!-- STORY CONTENT -->
+    <section class="story-section">
+        <div class="story-image">
+            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80" alt="Spa Ritual" style="height: 100%;">
         </div>
-        <div class="hero-visual">
-            <div class="hero-sub-grid">
-                <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&q=80" alt="Signature Suite" loading="lazy">
-                <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=600&q=80" alt="Treatment Room" loading="lazy">
+        <div class="story-text">
+            <h3 class="italic" style="font-size: 2.5rem; margin-bottom: 2rem; color: var(--deep-bg);">The Vilai Way</h3>
+            <p style="margin-bottom: 1.5rem;">In the heart of Mbombela, we've created a space where time slows down. Our journey began with a simple mission: to bring world-class wellness rituals to our local community, blending ancient wisdom with modern therapeutic techniques.</p>
+            <p style="margin-bottom: 2.5rem;">Every treatment at Vilai Lai Spa is designed as a personalized ritual. We believe that true beauty is the harmony of body, mind, and spirit. This philosophy guides everything we do, from the organic oils we select to the ambient soundscapes that fill our rooms.</p>
+            
+            <div class="feature-item" style="margin-bottom: 2rem;">
+                <div class="feature-num">01</div>
+                <div class="feature-text">
+                    <h4 class="caps">Ethical Sourcing</h4>
+                    <p>We partner with local and international brands that share our commitment to organic, cruelty-free, and sustainable beauty.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-num">02</div>
+                <div class="feature-text">
+                    <h4 class="caps">Master Therapists</h4>
+                    <p>Our team consists of highly trained professionals who view massage and skincare as a profound form of art and healing.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- TRUST BAR -->
-    <div class="trust-bar">
-        <div class="stat-item">
-            <h3>1,200+</h3>
-            <div class="caps">Happy Clients</div>
-        </div>
-        <div class="stat-item">
-            <h3>4.9</h3>
-            <div class="caps">Average Stars</div>
-        </div>
-        <div class="stat-item">
-            <h3>8</h3>
-            <div class="caps">Years Experience</div>
-        </div>
-        <div class="stat-item">
-            <h3>12+</h3>
-            <div class="caps">Signature Treatments</div>
-        </div>
-    </div>
-
-    <!-- PHILOSOPHY PREVIEW -->
-    <section class="philosophy">
-        <div class="philosophy-left">
-            <blockquote class="italic">"True beauty is the harmony of body, mind, and spirit."</blockquote>
-            <p>Nestled in the heart of Nelspruit, Vilai Lai Spa offers an escape from the frantic pace of modern life.</p>
-            <a href="philosophy.html" class="btn btn-ghost caps" style="margin-top: 2rem;">Read Our Philosophy</a>
-        </div>
-        <div class="philosophy-right">
-            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="Therapist Hands" loading="lazy">
-        </div>
+    <!-- MISSION SECTION -->
+    <section style="background-color: var(--card-surface); padding: 8rem 10%; text-align: center;">
+        <div class="diamond-divider"></div>
+        <h2 class="italic" style="font-size: 3rem; margin-bottom: 2rem; color: var(--deep-bg);">Our Mission</h2>
+        <p style="max-width: 800px; margin: 0 auto; font-size: 1.5rem; line-height: 1.4; color: var(--subtle-text);">"To provide a transformative sanctuary where every guest experiences a deep sense of peace, renewal, and authentic care."</p>
     </section>
 
     <!-- FINAL CTA -->
     <section class="final-cta">
         <div class="diamond-divider"></div>
-        <h2 class="italic">Begin Your Journey</h2>
+        <h2 class="italic">Experience the Ritual</h2>
         <div class="hero-actions" style="justify-content: center;">
             <button class="btn btn-gold caps open-booking">Book Appointment</button>
-            <a href="contact.html" class="btn btn-ghost caps">Contact Us</a>
+            <a href="services.html" class="btn btn-ghost caps">Explore Services</a>
         </div>
     </section>
 
